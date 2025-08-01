@@ -15,257 +15,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Schwwaaa</title>
+  <title>Welcome to Schwwaaa!</title>
   <link rel="stylesheet" href="css/pico.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
+  <nav class="container-fluid" style="position: relative;">
+    <ul id='topnav'>
+      <li id="logoli">
+        <img id="logoimg" src='./img/schwwaaa-trans.png' /><br>
+        𝒮𝒽𝒶𝓅𝒾𝓃𝑔 𝓉𝑜𝓂𝑜𝓇𝓇𝑜𝓌 ... 𝓉𝑜𝒹𝒶𝓎<br>
+        塩カ畏 🌈™
+      </li>
+    </ul>
+    <span class="hamburger" onclick="toggleMenu()">☰</span>
+    <ul id="topNavLinks">
+      <li><a href="https://youtube.com/@schwwaaa" target="_blank"><img id='yt-icon' src='img/youtube-icon.png' /></a></li>
+      <li><a href="#aboutus">About</a></li>
+      <li><a href="#presents">Events</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="https://www.etsy.com/shop/schwwaaap" target="_blank">The Schwwaaap</a></li>
+      <li><a href="#signup">Contact</a></li>
+    </ul>
+  </nav>
 
-<nav class="container-fluid">
-  <ul id='topnav' >
-    <!--<li><strong>🎛️ Schwwaaa</strong></li>-->
-    <li id="logoli"><img id="logoimg" src='./img/schwwaaa-trans.png' /><br>
-        𝒮𝒽𝒶𝓅𝒾𝓃𝑔 𝓉𝑜𝓂𝑜𝓇𝓇𝑜𝓌 ... 𝓉𝑜𝒹𝒶𝓎
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("topNavLinks");
+      menu.classList.toggle("show");
+    }
+  </script>
 
-        塩カ畏 🌈™</li>
-  
-  </ul>
-  <ul>
-    <li><a href="https://youtube.com/@schwwaaa" target="_blank"><img id ='yt-icon' src='img/youtube-icon.png' /></a></li>
-    <li><a href="#aboutus">About</a></li>
-    <li><a href="#presents">Events</a></li>
-    <li><a href="#partners">Partners</a></li>
-    <li><a href="https://agamemnonjuunes.link/constrcut.html" target="_blank">Schwwaaap</a></li>
-    <li><a href="#signup" role="button">Contact</a></li>
-    <!--<li><img id ='yt-icon' src='img/youtube-icon.png' /></li>-->
-  </ul>
-</nav>
+  <marquee id='topMarq' behavior="scroll" direction="left">📡 Schwwaaa and <a href="https://vondas.network" target="_blank">Vondas Software</a> are proud to be a part of <a href="https://www.synthlibraryportland.org/events/video-sync" target="_blank">VideoSync 2025</a> in Portland, OR on Aug 15-17. Come meet VB and the rest of the Schwwaaa family! 📺</marquee>
 
-<marquee behavior="scroll" direction="left">📡 OUR NEW INFRASTRCUTRUE IS LIVE! CLICK "WATCH LIVE" BELOW TO TUNE IN 📺</marquee>
-
-<div class="container accordion">
-  <details id="videoDetails">
-    <summary id="watchBtn">⏬   📺 <span id="watchBtnText">Watch Live Now</span> 📺   ⏬
-      <br><br><br>
-      <div id="horizline">
-        <img src="./img/line2.gif" />
-    </div>
-    <br>
-    </summary>
-
-    <div class="tv-bezel">
-      <div class="tv-screen">
-        <iframe id="videoFrame"
-          data-src="https://live.schwwaaa.net/embed/video"
-          allowfullscreen
-          allow="autoplay; encrypted-media"
-          loading="lazy">
-        </iframe>
+  <div class="container accordion">
+    <details id="videoDetails">
+      <summary id="watchBtn">⏬   📺 <span id="watchBtnText">Watch Live Now</span> 📺   ⏬<br><br><br>
+        <div id="horizline">
+          <img src="./img/line2.gif" />
+        </div>
+        <br>
+      </summary>
+      <div class="tv-bezel">
+        <div class="responsive-video">
+          <iframe id="videoFrame" data-src="https://live.schwwaaa.net/embed/video" allowfullscreen allow="autoplay; encrypted-media" loading="lazy"></iframe>
+          
+        </div>
       </div>
-    </div>
-  </details>
-</div>
-<br>
-
-<!-- slideshow and about -->
-<main class="container">
-  <div class="grid aboutus">
-    <section>
-      <hgroup>
-        <h2>Who We Are</h2>
-        <p>Schwwaaa is a global media production conglomerate founded in 2015 with the goal of bringing people together. We iterate. We create. We serve. We make. Watch our orientation video to find out more about the Schwwaaa Core Ethos.</p>
-      </hgroup>
-              
-      <div id="orientationVid">
-        <iframe id='orientationVidFrame' src="https://www.youtube.com/embed/e7QLoMve8BE?si=dZTg55BbW30Amf48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  
-      </div>
-    </section>
+    </details>
   </div>
+
+  <main class="container">
+    <div class="grid aboutus" id="aboutus">
+      <section>
+        <hgroup>
+          <h2>Who We Are</h2>
+          <p>Schwwaaa is a global media production conglomerate founded in 2015 with the goal of bringing people together. We iterate. We create. We serve. We make. Watch our orientation video to find out more about the Schwwaaa Core Ethos.</p>
+        </hgroup>
+        <div class="responsive-video">
+          <iframe id='orientationVidFrame' src="https://www.youtube.com/embed/e7QLoMve8BE?si=dZTg55BbW30Amf48" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <marquee behavior="scroll" direction="left">🤙 Subscribe!!! <a href='https://youtube.com/@schwwaaa'>youtube.com/@schwwaaa</a> 📺</marquee>
+
+  <main class="container">
+    <div id='presents' class="grid">
+      <section>
+        <hgroup>
+            <h2>Schwwaaa Presents</h2>
+            <p>Schwwaaa Presents is a series of special events. Stay tuned - our next event is just around the corner. Sign up for our mailing list for the latest details.</p>
+        </hgroup>
+    
+        <div id="eventDisplay">
+        <img id="defaultImg" src="img/workingonit.png" alt="Placeholder" />
+        </div>
+        <span>Past Events:</span>
+        <table class="events-table">
+        <tr onclick="showEvent('3C6S-6UM5Xk', '🎄 Schwwaaa Corporate Christmas Spectacular - Our annual holiday party!')">
+            <td>🎄 Schwwaaa Corporate Christmas Spectacular</td>
+        </tr>
+        <tr onclick="showEvent('vVYSf90GH5E', 'Valentine\'s Day Heart Health Seminar - ❤️s are top of mind.')">
+            <td>Valentine's Day Heart Health Seminar</td>
+        </tr>
+        <tr onclick="showEvent('xhum7_lTmts', 'All Day USA - Special 2024 election coverage')">
+            <td>All Day USA</td>
+        </tr>
+        <tr onclick="showEvent('4wCcPbMHzVo', 'Richard We Hardly Knew Ye - Honoring Richard Simmons.')">
+            <td>Richard We Hardly Knew Ye</td>
+        </tr>
+        <tr onclick="showEvent('vwxY_rXSUaI', 'A Leap Year Jubilee - With a special guest!')">
+            <td>A Leap Year Jubilee</td>
+        </tr>
+        <tr onclick="showEvent('KiHFQBMxNQU', 'RIP the_garbage_man - A Memorial Vigil.')">
+            <td>RIP the_garbage_man</td>
+        </tr>
+        </table>
+
+  <script>
+    function showEvent(videoId, description) {
+      const display = document.getElementById("eventDisplay");
+      display.innerHTML = `
+        <div class="responsive-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/${videoId}" allowfullscreen></iframe>
+        </div>
+        <p>${description}</p>
+      `;
+    }
+  </script>
+
+      </section>
+    </div>
 </main>
-<!-- END slideshow and about -->
 
-<marquee behavior="scroll" direction="left">🤙 Subscribe!!!<a href='https://youtube.com/@schwwaaa'>youtube.com/@schwwaaa</a> 📺</marquee>
+    <main class="container">
+    <div class="grid" id="partners">
+      <section>
+        <hgroup>
+          <h2>Partnerships</h2>
+          <h3>We can't do it without you!</h3>
+        </hgroup>
+        <p>Thank you to all our corporate partners!</p>
+        <ul>
+          <li><a href='https://ajuunes.github.io/vondas-site' target='_blank'>Vondas Software</a> 💠</li>
+          <li><a href='https://ajuunes.github.io/ajuunes-site/error.html' target='_blank'>The Medical Group</a> 💠</li>
+          <li><a href='https://derpycats.net' target='_blank'>DerpyCats</a> 💫</li>
+        </ul>
+      </section>
+    </div>
+  </main>
 
-
-<main class="container">
-  <div id='presents' class="grid">
-    <section>
-      <hgroup>
-        <h2>Schwwaaa Presents</h2>
-        <h4>Schwwaaa Presents is a series of special events. Stay tuned - our next event is just around the corner. Sign up for our mailing list for the latest details.</h4>
-      </hgroup>
-      <div id="tbd">
-        <img id='tbd_img' src="img/workingonit.png" />
-      </div>
-      <br>
-      <img src="img/horizbar.gif" />
-
-      <hgroup>
-        <h2>Past Special Events</h2>
-        <h3> </h3>
-      </hgroup>
-
-      <div id="video-gallery" class="container">
-        <div class="video-grid">
-          <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3C6S-6UM5Xk?si=sktmnb3kO7VbrdXG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <p><strong>🎄 Schwwaaa Corporate Christmas Spectacular Wintertime Experience 🎄</strong><br>Our Annual holiday party - all are welcome!
-            </p>
-          </div>
-          <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vVYSf90GH5E?si=z9O9TQcBrEJ3jdox" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <p><strong>Valentine's Day Heart Health Seminar</strong><br>During the month of February, ❤️s are top of mind for everyone
-            </p>
-          </div>
-          <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xhum7_lTmts?si=yILqumJ-wUveEolK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <p><strong>All Day USA</strong><br>Special coverage of the 2024 US Presidental Election</p>
-          </div>
-          <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4wCcPbMHzVo?si=skDWITmhTemiTEMJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        <p><strong>Richard We Hardly Knew Ye</strong><br>We honor and celebrate the life of our friend Richard Simmons. </p>
-          </div>
-          <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vwxY_rXSUaI?si=NnLLiWGhMK0PMnCU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                    <p><strong>A Leap Year Jubilee</strong><br>w/ very special guest!</p>
-          </div>
-          <div class="video-item">
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KiHFQBMxNQU?si=H6su7x6EUXnlXxKa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <p><strong>RIP the_garbage_man</strong><br>A Memorial Vigil</p>
-          </div>
-          <!-- Add more videos here -->
-        </div>
-      </div>
-      
-
-    </section>
-  </div>
-
-  <div class="grid">
-  <section>
-    <div id="gallery">
-      <div class="slideshow">
-        <img src="img/grinch.png" alt="Cluttered CRT workstation" class="slide" />
-        <img src="img/crab.png" alt="Offbeat office cube maze" class="slide" />
-        <img src="img/thumbs.png" alt="Surreal retro office lounge" class="slide" />
-        <img src="img/hydra1.png" alt="Offbeat office cube maze" class="slide" />
-        <img src="img/phoneguy.png" alt="Surreal retro office lounge" class="slide" />
-
-        <div class="slideshow-controls">
-        </div>
-      </div>
+  <section aria-label="Subscribe">
+    <div id='signup' class="container">
+      <article>
+        <hgroup>
+          <h1>Questions? Comments?</h1>
+          <h2>Just want to stay in touch?</h2>
+          <h3>Drop us a note, and sign up for our mailing list to stay updated.</h3>
+        </hgroup>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfskOAqaiQxcYu8ZAQlL_XnOftaMdXAV_CHpDjKapP9WqENSQ/formResponse"
+          method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+          <label>Name <input name="entry.789014902" type="text" required></label>
+          <label>Email <input name="entry.2136796510" type="email" required></label>
+          <label>Comment <input name="entry.837356963" type="text"></label>
+          <label><input name="entry.1141659498" type="checkbox"> Sign up for E-Mail Newsletter? 📬</label>
+          <button type="submit" class="cta-btn">Submit</button>
+        </form>
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+      </article>
     </div>
   </section>
-</div>
 
-  <div id='partners' class="grid">
-    <section>
-      <hgroup>
-        <h2>Partnerships</h2>
-        <h3>We can't do it without you! </h3>
-      </hgroup>
-      <p>
-        Thank you to all our corporate partners! 
-      </p>
-      <ul>
-        <li><a href='https://ajuunes.github.io/vondas-site' target='_blank'>Vondas Software</a> <span class="diamondClub">💠</span></li>
-        <li><a href='https://ajuunes.github.io/ajuunes-site/error.html' target='_blank'>The Medical Group</a> <span class="diamondClub">💠</span></li>
-        <li><a href='https://derpycats.net' target='_blank'>DerpyCats</a> <span class="goldenCircle">💫</span></li>
-      </ul>
-    </section>
-  </div>
-</main>
+  <footer class="container">
+    <small>Copyright 2025 Schwwaaa - all rights reserved.</small>
+  </footer>
 
+  <script>
+    const detailsEl = document.getElementById('videoDetails');
+    const iframeEl = document.getElementById('videoFrame');
 
-<section aria-label="Subscribe example">
-  <div id='signup' class="container">
-    <article>
-      <hgroup>
-        <h1>Question? Comments?</h1>
-        <h2>Just want to stay in touch?</h2>
-        <h3>Drop us a note, and sign up for our mailing list to stay updated. </h3>
-      </hgroup>
-      <div id="newsletterForm">
-      <form
-        action="https://docs.google.com/forms/d/e/1FAIpQLSfskOAqaiQxcYu8ZAQlL_XnOftaMdXAV_CHpDjKapP9WqENSQ/formResponse"
-        method="POST"
-        target="hidden_iframe"
-        onsubmit="submitted=true;"
-        class="space-y-4 max-w-md"
-      >
-        <div>
-          <label class="block text-sm font-medium">Name</label>
-          <input name="entry.789014902" type="text" required class="" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium">E-Mail</label>
-          <input name="entry.2136796510" type="email" required class="" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium">Comment</label>
-          <input name="entry.837356963" type="text" class="" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium">Signup for E-Mail Newsletter? 📬</label>
-          <input name="entry.1141659498" type="checkbox" class="" />
-        </div>
-
-        
-       
-        <br>
-        <button type="submit" class="cta-btn">
-          Submit 
-        </button>
-      </form>
-      <iframe name="hidden_iframe" style="display:none;"></iframe>
-    </div>
-    </article>
-  </div>
-</section>
-
-
-
-<footer class="container">
-  <small>Copyright 2025 Schwwaaa - all rights reserved.</small>
-</footer>
-<script>
-  let slideIndex = 0;
-  const slides = document.querySelectorAll(".slide");
-
-  function showSlide(n) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove("active");
-      if (i === n) {
-        slide.classList.add("active");
+    detailsEl.addEventListener('toggle', () => {
+      if (detailsEl.open && !iframeEl.src) {
+        iframeEl.src = iframeEl.getAttribute('data-src');
+      } else if (!detailsEl.open) {
+        iframeEl.src = "";
       }
     });
-  }
-
-  function plusSlides(n) {
-    slideIndex = (slideIndex + n + slides.length) % slides.length;
-    showSlide(slideIndex);
-  }
-
-  // Auto-slide every 5 seconds
-  setInterval(() => plusSlides(1), 5000);
-
-  // Initialize
-  showSlide(slideIndex);
-</script>
-
-<!-- bezel -->
-<script>
-  const detailsEl = document.getElementById('videoDetails');
-  const iframeEl = document.getElementById('videoFrame');
-
-  detailsEl.addEventListener('toggle', () => {
-    if (detailsEl.open && !iframeEl.src) {
-      iframeEl.src = iframeEl.getAttribute('data-src');
-    } else if (!detailsEl.open) {
-      iframeEl.src = "";
-    }
-  });
-</script>
-
+  </script>
 
 </body>
 </html>
