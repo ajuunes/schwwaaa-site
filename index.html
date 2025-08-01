@@ -49,22 +49,33 @@
 
   <marquee id='topMarq' behavior="scroll" direction="left">📡 Schwwaaa and <a href="https://vondas.network" target="_blank">Vondas Software</a> are proud to be a part of <a href="https://www.synthlibraryportland.org/events/video-sync" target="_blank">VideoSync 2025</a> in Portland, OR on Aug 15-17. Come meet VB and the rest of the Schwwaaa family! 📺</marquee>
 
-  <div class="container accordion">
+<div class="container accordion">
     <details id="videoDetails">
-      <summary id="watchBtn">⏬   📺 <span id="watchBtnText">Watch Live Now</span> 📺   ⏬<br><br><br>
+      <summary id="watchBtn">
+        ⏬   📺 <span id="watchBtnText">Watch Live Now</span> 📺   ⏬<br><br><br>
         <div id="horizline">
-          <img src="./img/line2.gif" />
+          <img src="./img/line2.gif" alt="line" />
         </div>
         <br>
       </summary>
       <div class="tv-bezel">
         <div class="responsive-video">
           <iframe id="videoFrame" data-src="https://live.schwwaaa.net/embed/video" allowfullscreen allow="autoplay; encrypted-media" loading="lazy"></iframe>
-          
         </div>
       </div>
     </details>
   </div>
+
+  <script>
+    function toggleNav() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
 
   <main class="container">
     <div class="grid aboutus" id="aboutus">
@@ -74,8 +85,11 @@
           <p>Schwwaaa is a global media production conglomerate founded in 2015 with the goal of bringing people together. We iterate. We create. We serve. We make. Watch our orientation video to find out more about the Schwwaaa Core Ethos.</p>
         </hgroup>
         <div class="responsive-video">
-          <iframe id='orientationVidFrame' src="https://www.youtube.com/embed/e7QLoMve8BE?si=mY_jeKdQMdoMr2M7" title="YouTube video player" allowfullscreen></iframe>
+          <iframe id='orientationVidFrame' src="https://www.youtube.com/embed/e7QLoMve8BE" title="YouTube video player" allowfullscreen></iframe>
         </div>
+
+
+
       </section>
     </div>
   </main>
