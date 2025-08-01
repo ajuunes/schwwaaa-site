@@ -1,329 +1,285 @@
-    body {  
-      background-color: #419f88;
-      background-image: url("../img/diagonal-waves.png");
-      background-repeat: repeat;
-      color: #222;
-      font-family: 'Tahoma', sans-serif;
-    }
-
-    nav, footer {
-      background: #ffffff;
-      background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(0, 58, 102, 1) 100%);border: 3px solid #2ae3d0;
-      color: #fff;
-      padding: .25rem;
-    }
-
-    nav a, footer a {
-      color: #f1ff3c;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Courier New', monospace;
-      color: #003366;
-    }
-
-    section {
-      background-color: #ffffffcc;
-      border: 2px solid #999;
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    button, input[type="text"], input[type="email"] {
-      background-color: #FFF5E6;
-      color: #000;
-      font-family: 'Courier New', monospace;
-      border: 2px solid #FF9900;
-    }
-
-    figure img {
-      border: 4px solid #003366;
-      max-width: 100%;
-    }
-
-    figure figcaption a {
-      color: #003366;
-      font-weight: bold;
-    }
-
-    marquee {
-      font-size: 1.1rem;
-      color: #2ae3d0;
-      background: #556f89;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .accordion {
-      margin-bottom: 2rem;
-    }
-
-    .accordion summary {
-      background-color: #fdffed;
-      background-image: url("../img/tasky.png");
-      background-repeat: repeat;
-      color: #f1ff3c !important;
-      padding: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      border: 2px solid #003366;
-      text-align: center;
-    }
-
-    .accordion iframe {
-      width: 100%;
-      max-width: 100%;
-      height: 360px;
-      border: 2px solid #003366;
-      margin-top: 1rem;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .accordion p {
-      width: 100%;
-      max-width: 50%;
-      margin-top: 1rem;
-      display: block;
-      margin: 0 auto;
-    }
-
-    #horizline {
-    position:relative;
-    height: 100%;
-    width:100%;
-}
-
-#horizline img {
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin:auto;
-}
-
-#topnav {
-    color:#5c6635 !important;
-}
-
-#logoimg {
-    width: 20%
-}
-
-.tv-bezel {
-  background: #222;
-  border: 20px solid #3c1b00;
-  border-radius: 5px;
-  padding: 1rem;
-  box-shadow: inset 0 0 30px #000, 0 0 20px #111;
-  max-width: 800px;
-  margin: 1rem auto;
-  position: relative;
-  aspect-ratio: 16 / 9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.tv-screen {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: inset 0 0 10px #000;
-}
-
-.tv-screen iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-  background: #000;
-}
-
-
-
-@media (max-width: 600px) {
-
-  .tv-bezel {
-    border-width: 4px;
-    padding: 0.5rem;
+  body {
+    background: #419f88 url("../img/diagonal-waves.png") repeat;
+    color: #222;
+    font-family: 'Tahoma', sans-serif;
   }
-}
 
+  nav, footer {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 58, 102, 1) 100%);
+    border: 3px solid #2ae3d0;
+    color: #fff;
+    padding: 0.25rem;
+  }
 
-/* Slideshow Styling with Fade */
-.slideshow {
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  background: #ffffff;
-  border: 2px solid #003366;
-  padding: 1rem;
-  text-align: center;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  z-index: 0;
-}
-
-.slide.active {
-  opacity: 1;
-  z-index: 1;
-  position: relative;
-}
-
-.slideshow-controls {
-  margin-top: 1rem;
-}
-
-.slideshow-controls button {
-  background-color: #003366;
-  color: #fff;
-  border: none;
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-
-.slideshow-controls button:hover {
-  background-color: #0055aa;
-}
-    
-
-    @media screen and (max-width: 768px) {
-      .accordion iframe {
-        height: 290px;
-        width: 100%;
-        max-width: 90%;
-      }
-      .accordion p {
-        max-width: 90%;
-
-      }
-
-      #logoimg {
-    width: 90%
-}
-
-#topnav li {
-    font-size: 60%;
-}
-    }
-
-
-
-    #yt-icon {
-        width: 70%;
-    }
-    #yt-icon:hover {
-        cursor: pointer;
-    }
-
-
-#watchBtn:hover {
+  nav a, footer a {
+    color: #f1ff3c;
+    text-decoration: underline;
     cursor: pointer;
-    
-}
+  }
 
-#watchBtnText:hover {
+  h1, h2, h3 {
+    font-family: 'Courier New', monospace;
+    color: #003366;
+  }
+
+  section, article {
+    background-color: #ffffffcc;
+    border: 2px solid #999;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  button, input[type="text"], input[type="email"] {
+    background-color: #FFF5E6;
+    color: #000;
+    font-family: 'Courier New', monospace;
+    border: 2px solid #FF9900;
+  }
+
+  figure img {
+    border: 4px solid #003366;
+    max-width: 100%;
+  }
+
+  figure figcaption a {
+    color: #003366;
+    font-weight: bold;
+  }
+
+  marquee {
+    font-size: 1.1rem;
+    color: #2ae3d0;
+    background: #556f89;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 2px gray;
+  }
+
+  .accordion {
+    margin-bottom: 2rem;
+  }
+
+  .accordion summary {
+    background: #fdffed url("../img/tasky.png") repeat;
+    color: #f1ff3c;
+    padding: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #003366;
+    text-align: center;
+  }
+
+  .accordion iframe, .responsive-video iframe, .tv-screen iframe, #orientationVid iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #000;
+    display: block;
+  }
+
+  .accordion p {
+    max-width: 50%;
+    margin: 1rem auto;
+  }
+
+  #horizline {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  #horizline img {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    margin: auto;
+  }
+
+  #topnav {
+    color: #5c6635;
+  }
+
+  #logoimg {
+    max-width: 150px;
+  }
+
+  #yt-icon {
+    width: 75px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  #watchBtn:hover {
+    cursor: pointer;
+  }
+
+  #watchBtnText {
+    color: #2ae3d0;
+    text-shadow: red 2px 5px;
+  }
+  #watchBtnText:hover {
     color: blue;
     cursor: s-resize;
-}
+    text-shadow: lightgreen 2px 5px;
+  }
 
-
-#orientationVid {
+  #orientationVid {
     position: relative;
-    display: block;
-    width: 90%; /* width of iframe wrapper */
-    height: 0;
+    width: 90%;
+    padding-bottom: 56.25%;
     margin: auto;
-    padding: 0% 0% 56.25%; /* 16:9 ratio */
     overflow: hidden;
   }
-  #orientationVid iframe {
-    position: absolute;
-    top: 0; bottom: 0; left: 0;
-    width: 100%;
-    height: 150%;
-    border: 0;
-  }
 
-
-#tbd {
-    width: 69%; /* Can be in percentage also. */
-    height: auto;
+  #tbd {
+    width: 69%;
     margin: 0 auto;
     padding: 10px;
     position: relative;
+  }
+
+  #tbd_img {
+    width: 40%;
+  }
+
+  #video-gallery {
+    padding: 2rem 1rem;
+    color: #eee;
+  }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .video-item {
+    background-color: #222;
+    border: 2px solid rgb(0, 255, 204);
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgb(0, 213, 255);
+  }
+
+  .video-item p {
+    margin-top: 0.5rem;
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+  }
+
+  .tv-bezel {
+    background: #222;
+    border: 20px solid #3c1b00;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: inset 0 0 30px #000, 0 0 20px #111;
+    max-width: 800px;
+    margin: 1rem auto;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .tv-screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px #000;
+  }
+
+  .responsive-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 12px;
+    background: #000;
+  }
+
+  .events-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+
+  .events-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    color: #003366;
+  }
+
+  .events-table tr:hover {
+    background: #f0f0f0;
+  }
+
+  #eventDisplay img,
+  #eventDisplay .responsive-video {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    nav ul:not(:first-child) {
+      display: none;
+      flex-direction: column;
+      background-color: #fff;
+      position: absolute;
+      right: 1rem;
+      top: 70px;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
     }
-    #tbd_img {
-        width: 40%;
+
+    nav ul.show {
+      display: flex;
     }
 
+    nav a, footer a {
+    color: #556f89;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 
+    .hamburger {
+      display: block;
+    }
 
+    .accordion iframe {
+      height: 290px;
+      max-width: 90%;
+    }
 
+    .accordion p {
+      max-width: 90%;
+    }
 
+    #logoimg {
+      width: 90%;
+    }
 
+    #topnav li {
+      font-size: 60%;
+    }
 
+    .tv-bezel {
+      border-width: 4px;
+      padding: 0.5rem;
+    }
+  }
 
-
-    #video-gallery {
-        padding: 2rem 1rem;
-        color: #eee;
-      }
-      
-      .video-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1rem;
-      }
-      
-      .video-item {
-        background-color: #222;
-        border: 2px solid rgb(0, 255, 204);
-        padding: .5rem;
-        border-radius: 8px;
-        text-align: center;
-        box-shadow: 0 0 10px rgb(0, 213, 255);
-      }
-      
-      .video-item iframe {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        border: none;
-        background-color: black;
-      }
-      
-      .video-item p {
-        margin-top: 0.5rem;
-        font-family: "Courier New", monospace;
-        font-size: 0.9rem;
-      }
-      
-
-
-      #newsletterForm{
-        margin: auto;
-        max-width: 60%;
-      }
-
-
-      article {
-        background-color: #d2edea !important;
-      }
