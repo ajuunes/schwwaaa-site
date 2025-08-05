@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Owncast TV Frame</title>
+  <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+  <style>
+    .tv-wrap {
+      position: relative;
+      max-width: 800px;
+      margin: 2rem auto;
+      aspect-ratio: 16 / 9;
+    }
+/*
+.tv-knob {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.2s ease;
+} */
+
+.tv-knob:hover {
+  border-color: #2ae3d0;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+    .tv-video {
+      position: absolute;
+      top: 19%;
+      left: 4%;
+      width: 74%;
+      height: 68%;
+      z-index: 1;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #000;
+    }
+
+    #owncast-player {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tv-frame {
+      width: 100%;
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 1rem;
+    }
+body { 
+    background-color: black;
+}
+
+
+button {
+  background: #222;               /* dark base */
+  color: #eee;                   /* light text */
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 2px solid #555;        /* subtle border */
+  border-radius: 6px;            /* rounded corners */
+  padding: 12px 18px;
+  margin: 6px 8px 6px 0;
+  box-shadow:
+    inset 0 3px 0 #555,         /* highlight top inset */
+    inset 0 -3px 6px #000;      /* shadow bottom inset */
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease-in-out;
+  text-shadow: 0 1px 0 #000;
+  outline: none;
+  min-width: 90px;
+}
+
+button:hover {
+  background: #444;
+  border-color: #2ae3d0;
+  box-shadow:
+    inset 0 3px 0 #2ae3d0,
+    inset 0 -3px 6px #000,
+    0 0 10px #2ae3d0;
+  color: #2ae3d0;
+}
+
+button:active {
+  background: #111;
+  box-shadow:
+    inset 0 1px 2px #000;
+  transform: translateY(2px);
+}
+
+label {
+  color: #eee;
+  font-weight: bold;
+  margin-right: 10px;
+  user-select: none;
+}
+
+/* Volume slider: thicker, with a retro look */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 150px;
+  height: 12px;
+  background: #222;
+  border-radius: 6px;
+  box-shadow: inset 0 0 5px #000;
+  margin-left: 6px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: #2ae3d0;
+  border: 2px solid #0f9f91;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px #000;
+  cursor: pointer;
+  margin-top: -6px; /* align thumb vertically */
+  transition: background 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #0ff;
+  border-color: #00bfa0;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  background: #2ae3d0;
+  border: 2px solid #0f9f91;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px #000;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: #0ff;
+  border-color: #00bfa0;
+}
+
+
+@media (max-width: 600px) {
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+    min-width: 70px;
+    margin: 4px 6px 4px 0;
+  }
+
+  input[type="range"] {
+    width: 120px;
+    height: 10px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb,
+  input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    margin-top: -4px; /* align thumb vertically */
+  }
+}
+ 
+  </style>
+  
+</head>
+<body>
+
+<div id="bgblk">
+<div class="tv-wrap">
+  <div class="tv-video">
+    <video
+      id="owncast-player"
+      class="video-js"
+      preload="auto"
+      playsinline
+      muted
+    >
+      <source src="https://live.schwwaaa.net/hls/stream.m3u8" type="application/x-mpegURL" />
+    </video>
+  </div>
+  <img src="./img/tvset2.png" alt="TV Frame" class="tv-frame" />
+
+   <!-- Control buttons positioned on top of the image 
+  <button class="tv-knob" style="top: 87%; left: 93%;" onclick="playVideo()" title="Toggle Play"></button>
+  <button class="tv-knob" style="top: 72%; left: 25%;" onclick="toggleFullscreen()"></button>-->
+</div>
+
+<div class="controls">
+  <button onclick="playVideo()">▶️ Play</button>
+  <button onclick="pauseVideo()">⏸️ Pause</button>
+  <button onclick="toggleMute()">🔇 Mute/Unmute</button>
+  <button onclick="toggleFullscreen()">⛶ Fullscreen</button><br><br>
+
+  <label for="volumeControl">🔊 Volume:</label>
+  <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5" onchange="setVolume(this.value)">
+
+</div>
+</div>
+
+<script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+<script>
+  let player;
+
+  // Wait for DOM to be ready
+  window.addEventListener('DOMContentLoaded', () => {
+    player = videojs('owncast-player');
+    player.volume(0.5); // initial volume matches slider
+
+  });
+  
+
+  function playVideo() {
+    if (player) player.play();
+  }
+
+  function pauseVideo() {
+    if (player) player.pause();
+  }
+
+  function toggleMute() {
+    if (player) player.muted(!player.muted());
+  }
+
+  function toggleFullscreen() {
+  if (player) {
+    if (player.isFullscreen()) {
+      player.exitFullscreen();
+    } else {
+      player.requestFullscreen();
+    }
+  }
+}
+
+function setVolume(value) {
+  if (player) {
+    player.volume(parseFloat(value));
+  }
+}
+</script>
+
+<script>
+  function sendHeight() {
+    const height = document.body.scrollHeight;
+    window.parent.postMessage({ type: 'vbtestHeight', height: height + 40 }, '*');
+  }
+
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+</script>
+</body>
+</html>
