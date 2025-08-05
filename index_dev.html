@@ -13,13 +13,14 @@
 -->
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Welcome to Schwwaaa!</title>
-  <link rel="stylesheet" href="css/pico.css" />
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to Schwwaaa!</title>
+    <link rel="stylesheet" href="css/pico.css" />
+    <link rel="stylesheet" href="css/styles_new.css" />
 
-  <link rel="stylesheet" href="css/stream-styles.css">
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+       
 
 </head>
 
@@ -51,37 +52,73 @@
   </script>
 
   <marquee id='topMarq' behavior="scroll" direction="left">📡 Schwwaaa and <a href="https://vondas.network" target="_blank">Vondas Software</a> are proud to be a part of <a href="https://www.synthlibraryportland.org/events/video-sync" target="_blank">VideoSync 2025</a> in Portland, OR on Aug 15-17. Come meet VB and the rest of the Schwwaaa family! 📺</marquee>
+  
+    <div class="container accordion">
+        <details id="videoDetails">
+            <summary id="watchBtn">
+                ⏬   📺 <span id="watchBtnText">Watch Live Now</span> 📺   ⏬<br><br><br>
+                <div id="horizline">
+                <img src="./img/line2.gif" alt="line" />
+                </div>
+                <br>
+            </summary>  
+            <div class="owncast-player">
+                <iframe id="vbIframe" src="vbtest.html" allowfullscreen></iframe>
+            </div>
+            <script>
 
-<div class="container accordion">
-    <details id="videoDetails">
-      <summary id="watchBtn">
-        ⏬   📺 <span id="watchBtnText">Watch Live Now</span> 📺   ⏬<br><br><br>
-        <div id="horizline">
-          <img src="./img/line2.gif" alt="line" />
-        </div>
-        <br>
-      </summary>
-      <div class="tv-bezel">
-        <div class="responsive-video">
-          <iframe id="videoFrame" data-src="https://live.schwwaaa.net/embed/video" allowfullscreen allow="autoplay; encrypted-media" loading="lazy"></iframe>
-        </div>
-      </div>
-    </details>
+</script>
 
-    <iframe id="videoFrame" data-src="https://live.schwwaaa.net/embed/video" allowfullscreen allow="autoplay; encrypted-media" loading="lazy"></iframe>
+            <script>
+                let player;
 
-  </div>
+                // Wait for DOM to be ready
+                window.addEventListener('DOMContentLoaded', () => {
+                    //player = videojs('owncast-player');
+                    player = videojs('owncast-player');
+                    player.volume(0.5); // initial volume matches slider
 
-  <script>
-    function toggleNav() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
-  </script>
+                });
+                  window.addEventListener('message', function (event) {
+                    if (event.data?.type === 'vbtestHeight' && typeof event.data.height === 'number') {
+                      const iframe = document.getElementById('vbIframe');
+                      if (iframe) {
+                        iframe.style.height = `${event.data.height}px`;
+                      }
+                    }
+                });
+            
+                function playVideo() {
+                    if (player) player.play();
+                }
+
+                function pauseVideo() {
+                    if (player) player.pause();
+                }
+
+                function toggleMute() {
+                    if (player) player.muted(!player.muted());
+                }
+
+                function toggleFullscreen() {
+                if (player) {
+                    if (player.isFullscreen()) {
+                    player.exitFullscreen();
+                    } else {
+                    player.requestFullscreen();
+                    }
+                }
+                }
+
+                function setVolume(value) {
+                    if (player) {
+                        player.volume(parseFloat(value));
+                    }
+                }
+            </script>
+        </details>
+    </div>
+
 
   <main class="container">
     <div class="grid aboutus" id="aboutus">
@@ -93,15 +130,15 @@
         <div class="responsive-video">
           <iframe id='orientationVidFrame' src="https://www.youtube.com/embed/e7QLoMve8BE" title="YouTube video player" allowfullscreen></iframe>
         </div>
-
-
-
       </section>
     </div>
   </main>
 
+
   <marquee behavior="scroll" direction="left">🤙 Subscribe!!! <a href='https://youtube.com/@schwwaaa'>youtube.com/@schwwaaa</a> 📺</marquee>
 
+
+  <!--
   <main class="container">
     <div id='presents' class="grid">
       <section>
@@ -140,7 +177,8 @@
       const display = document.getElementById("eventDisplay");
       display.innerHTML = `
         <div class="responsive-video">
-          <iframe src="https://www.youtube-nocookie.com/embed/${videoId}" allowfullscreen></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/${videoId}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
         </div>
         <p>${description}</p>
       `;
@@ -150,6 +188,7 @@
       </section>
     </div>
 </main>
+-->
 
     <main class="container">
     <div class="grid" id="partners">
@@ -195,15 +234,17 @@
 
   <script>
     const detailsEl = document.getElementById('videoDetails');
-    const iframeEl = document.getElementById('videoFrame');
+    const iframeEl = document.getElementById('owncast-player');
 
     detailsEl.addEventListener('toggle', () => {
       if (detailsEl.open && !iframeEl.src) {
-        iframeEl.src = iframeEl.getAttribute('data-src');
+        iframeEl.src = iframeEl.getAttribute('src');
       } else if (!detailsEl.open) {
         iframeEl.src = "";
       }
     });
+
+
   </script>
 
 </body>
