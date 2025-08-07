@@ -24,7 +24,7 @@
     
   </style>
 </head>
-<body>
+<body style="margin:0; background:transparent; overflow:hidden;">
   <div class="popup" id="welcomePopup">
     <div class="popup-content">
       <h3>Welcome to Schwwaaa Live Online Player</h3>
@@ -33,7 +33,7 @@
       <button onclick="startStream()">OK</button>
     </div>
   </div>
-  <div class="player-container">
+  <div class="player-container" style="margin: 0 auto; position: relative;">
     <div class="title-bar">
       <span>Schwwaaa Live Online Media Player</span>
     </div>
@@ -555,15 +555,13 @@
     drawLowpassSlider();
 
 
-    function postHeight() {
-    const height = document.documentElement.scrollHeight || document.body.scrollHeight;
-    parent.postMessage({ type: 'vbtestHeight', height }, '*');
-    
-    }
+function postHeight() {
+  const height = document.querySelector('.player-container').offsetHeight;
+  parent.postMessage({ type: 'resizeIframe', height: height + 40 }, '*');
+}
 
-    // send once on load and on resize
-    window.addEventListener('load', postHeight);
-    window.addEventListener('resize', postHeight);
+window.addEventListener('load', postHeight);
+window.addEventListener('resize', postHeight);
   </script>
 </body>
 </html>
