@@ -554,14 +554,13 @@
     lowpass.height = window.innerWidth <= 600 ? 30 : 40;
     drawLowpassSlider();
 
+    function postHeight() {
+    const height = document.querySelector('.player-container').offsetHeight;
+    parent.postMessage({ type: 'resizeIframe', height: height + 40 }, '*');
+    }
 
-function postHeight() {
-  const height = document.querySelector('.player-container').offsetHeight;
-  parent.postMessage({ type: 'resizeIframe', height: height + 40 }, '*');
-}
-
-window.addEventListener('load', postHeight);
-window.addEventListener('resize', postHeight);
+    window.addEventListener('load', postHeight);
+    window.addEventListener('resize', postHeight);
   </script>
 </body>
 </html>
