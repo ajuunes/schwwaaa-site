@@ -72,11 +72,18 @@
         </div>
         <br>
       </summary>
-      <div class="tv-bezel">
-        <div class="responsive-video">
-          <iframe style="width: 100%; height: 100vh; border: none;" loading="lazy" src="schwwaaa-live-player.html"></iframe>
-        </div>
-      </div>
+<div class="tv-bezel">
+  <div class="responsive-video">
+    <iframe 
+      style="width: 100%; border: none;" 
+      loading="lazy" 
+      src="player7.html?embed=true">
+    </iframe>
+  </div>
+</div>
+
+
+      
     </details>
   </div>
 
@@ -229,6 +236,14 @@
         iframeEl.src = "";
       }
     });
+
+    window.addEventListener("message", function(event) {
+  if (event.data?.type === 'resizeIframe' && event.data.height) {
+    const iframe = document.querySelector('.tv-bezel iframe');
+    if (iframe) iframe.style.height = `${event.data.height}px`;
+  }
+});
+
   </script>
 
 </body>
