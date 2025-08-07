@@ -1,4 +1,11 @@
-body {
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #419f88 url("../img/diagonal-waves.png") repeat;
+    overflow: hidden;
+  }
+
+/*body {
       margin: 0;
       background: #1a1a1a;
       font-family: 'Arial', sans-serif;
@@ -9,17 +16,15 @@ body {
       color: #fff;
       overflow: auto;
     }
-    .player-container {
-      background: linear-gradient(135deg, #4a4a4a, #2a2a2a);
-      border: 2px solid #666;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5), inset 0 0 5px rgba(255,255,255,0.2);
-      width: 90vw;
-      max-width: 800px;
-      border-radius: 5px;
-      overflow: hidden;
-      position: relative;
-      box-sizing: border-box;
-    }
+    */
+.player-container {
+    margin: 0;
+    width: 100vw;
+    max-width: none;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
     .title-bar {
       background: linear-gradient(to right, #0a2463, #4682b4);
       padding: 5px 10px;
