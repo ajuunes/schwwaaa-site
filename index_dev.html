@@ -3,8 +3,8 @@
 
 <!--
 
- ______
-|_,.,--\
+ _______
+|_,.,- -\
    ||
    ||
    ##
@@ -25,15 +25,15 @@
   <nav class="container-fluid" style="position: relative;">
     <ul id='topnav'>
       <li id="logoli">
-        <img id="logoimg" alt='schwwaaa cursive font logo' src='./img/schwwaaa-trans.png'><br>
-        𝒮𝒽𝒶𝓅𝒾𝓃𝑔 𝓉𝑜𝓂𝑜𝓇𝓇𝑜𝓌 ... 𝓉𝑜𝒹𝒶𝓎<br>
+        <img id="logoimg" alt='schwwaaa cursive font logo' src='./img/schwwaaa-trans.png'><br />
+        𝒮𝒽𝒶𝓅𝒾𝓃𝑔 𝓉𝑜𝓂𝑜𝓇𝓇𝑜𝓌 ... 𝓉𝑜𝒹𝒶𝓎<br />
         塩カ畏 🌈™
       </li>
     </ul>
     <span class="hamburger" onclick="toggleMenu()">☰</span>
     <ul id="topNavLinks">
-      <li><a href="https://youtube.com/@schwwaaa" alt='youtube icon with thumb' target="_blank">
-        <img id='yt-icon' src='img/youtube-icon.png'>
+      <li><a href="https://youtube.com/@schwwaaa" target="_blank">
+        <img id='yt-icon' alt='youtube icon with thumb' src='img/youtube-icon.png'>
       </a></li>
       <li><a href="#aboutus">About</a></li>
       <li><a href="#presents">Events</a></li>
@@ -52,7 +52,7 @@
 
 
   <!--top marquee div since <marquee> is deprectaed?! who knew :-( -->
-  <div id="marqdiv">
+  <div class="marqdiv" id="topmarqdiv">
     <div class="marquee">
       <span class="marquee-content">
           📡 Schwwaaa and <a href="https://vondas.network" target="_blank">Vondas Software</a> are proud to be a part of <a href="https://www.synthlibraryportland.org/events/video-sync" target="_blank">VideoSync 2025</a> in Portland, OR on Aug 15-17. Come meet VB and the rest of the Schwwaaa family! 📺
@@ -65,25 +65,22 @@
   <div class="container accordion">
     <details id="videoDetails">
       <summary id="watchBtn">
-        <span id="watchBtnText">⏬ 📺 Watch Live Online 📺 ⏬</span>
+        <span id="watchBtnText">⏬ 📺 Watch Live! 📺 ⏬</span>
         <br><br><br>
-        <div id="horizline">
+        <span id="horizline">
           <img src="./img/line2.gif" alt="line" title="Click to watch Schwwaaa Live Online - Now!">
-        </div>
+        </span>
         <br>
       </summary>
-<div class="tv-bezel">
-  <div class="responsive-video">
-    <iframe 
-      style="width: 100%; border: none;" 
-      loading="lazy" 
-      src="schwwaaa-live-player.html?embed=true">
-    </iframe>
-  </div>
-</div>
-
-
-      
+      <div class="tv-bezel">
+        <div class="responsive-video">
+          <iframe 
+            style="width: 100%; border: none;" 
+            loading="lazy" 
+            src="player7.html?embed=true">
+          </iframe>
+        </div>
+      </div>
     </details>
   </div>
 
@@ -98,14 +95,12 @@
     }
   </script>
 
-
-
   <!--About Us-->
   <div class="container">
     <div class="grid aboutus" id="aboutus">
       <section>
         <hgroup>
-          <h2>Who We Are</h2>
+          <h1>Who We Are</h1>
           <p>Schwwaaa is a global media production conglomerate founded in 2015 with the goal of bringing people together. We iterate. We create. We serve. We shap tomorrow. Today. Watch our orientation video to find out more about the Schwwaaa Core Ethos.</p>
         </hgroup>
         <div class="responsive-YT-video">
@@ -117,7 +112,7 @@
 
 
   <!--middle marquee div-->
-  <div id="marqdiv">
+  <div class="marqdiv" id="midmarqdiv">
     <div class="marquee">
       <span class="marquee-content">
         🤙 Subscribe!!! <a href='https://youtube.com/@schwwaaa'>youtube.com/@schwwaaa</a> 📺
@@ -131,10 +126,9 @@
     <div id='presents' class="grid">
       <section>
         <hgroup>
-            <h2>Schwwaaa Presents</h2>
+            <h1>Schwwaaa Presents</h1>
             <p>Schwwaaa Presents is a series of special events. Stay tuned - our next event is just around the corner. Sign up for our mailing list for the latest details.</p>
         </hgroup>
-    
         <div id="eventDisplay">
         <img id="defaultImg" src="img/workingonit.png" alt="placeholder image">
         </div>
@@ -179,8 +173,8 @@
     <div class="grid" id="partners">
       <section>
         <hgroup>
-          <h2>Partnerships</h2>
-          <h3>We can't do it without you!</h3>
+          <h1>Partnerships</h1>
+          <p>We can't do it without you!</p>
         </hgroup>
         <p>Thank you to all our corporate partners!</p>
         <ul>
@@ -192,44 +186,43 @@
     </div>
   </div>
 
-  <section aria-label="Subscribe">
-    <div id='signup' class="container">
-      <article>
-        <hgroup>
-          <h1>Questions? Comments?</h1>
-          <h2>Just want to stay in touch?</h2>
-          <h3>Drop us a note, and sign up for our mailing list to stay updated.</h3>
-        </hgroup>
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfskOAqaiQxcYu8ZAQlL_XnOftaMdXAV_CHpDjKapP9WqENSQ/formResponse"
-          method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-          <label>Name 
-            <input name="entry.789014902" type="text" required> 
-          </label>
-          <label>Email 
-            <input name="entry.2136796510" type="email" required> 
-          </label>
-          <label>Comment 
-            <input name="entry.837356963" type="text"> 
-          </label>
-          <label>
-            <input name="entry.1141659498" type="checkbox"> Sign up for E-Mail Newsletter? 📬
-          </label>
-          <br>
-          <button type="submit" class="cta-btn">Submit</button>
-        </form>
-        <iframe name="hidden_iframe" style="display:none;"></iframe>
-      </article>
-    </div>
-  </section>
+  
+  <div id='signup' class="container">
+    <article>
+      <hgroup>
+        <h2>Questions?</h2>
+      </hgroup>
+      <hgroup>
+        <h4>Comments? Just want to stay in touch? Drop us a note, and sign up for our mailing list to stay updated.</h4>
+      </hgroup>
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSfskOAqaiQxcYu8ZAQlL_XnOftaMdXAV_CHpDjKapP9WqENSQ/formResponse"
+        method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+        <label>Name 
+          <input name="entry.789014902" type="text" required> 
+        </label>
+        <label>Email 
+          <input name="entry.2136796510" type="email" required> 
+        </label>
+        <label>Comment 
+          <input name="entry.837356963" type="text"> 
+        </label>
+        <label>
+          <input name="entry.1141659498" type="checkbox"> Sign up for E-Mail Newsletter? 📬
+        </label>
+        <br>
+        <button type="submit" class="cta-btn">Submit</button>
+      </form>
+      <iframe name="hidden_iframe" style="display:none;"></iframe>
+    </article>
+  </div>
 
   <footer class="container">
     <small>Copyright 2025 Schwwaaa - all rights reserved.</small>
     <a href="https://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
             src="https://jigsaw.w3.org/css-validator/images/vcss"
-            alt="Valid CSS!" />
+            alt="Valid CSS!">
     </a>
-
   </footer>
 
   <script>
@@ -245,11 +238,11 @@
     });
 
     window.addEventListener("message", function(event) {
-  if (event.data?.type === 'resizeIframe' && event.data.height) {
-    const iframe = document.querySelector('.tv-bezel iframe');
-    if (iframe) iframe.style.height = `${event.data.height}px`;
-  }
-});
+      if (event.data?.type === 'resizeIframe' && event.data.height) {
+        const iframe = document.querySelector('.tv-bezel iframe');
+        if (iframe) iframe.style.height = `${event.data.height}px`;
+      }
+    });
 
   </script>
 
